@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1W2RE5SRJ5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-1W2RE5SRJ5');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Current Weather</title>
     
-    <!-- Favicon with weather icon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌤️</text></svg>">
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -44,7 +52,6 @@
     <div class="w-full max-w-md glass-card p-8 shadow-2xl">
         <h1 class="text-3xl font-bold mb-6 text-center">Weather Forecast</h1>
         
-        <!-- Search -->
         <div class="relative mb-8">
             <input type="text" id="cityInput" placeholder="Enter city (e.g. Paris)" 
                 class="w-full bg-white/10 border border-white/20 rounded-xl py-3 px-5 pr-12 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50 transition">
@@ -54,7 +61,6 @@
             </button>
         </div>
 
-        <!-- Weather Info -->
         <div id="weatherContent" class="text-center hidden animate-fade-in">
             <h2 id="cityName" class="text-4xl font-bold mb-2">---</h2>
             <p id="countryName" class="text-white/70 mb-6 uppercase tracking-widest text-sm">---</p>
@@ -80,20 +86,17 @@
             </div>
         </div>
 
-        <!-- Empty state / Loading -->
         <div id="placeholder" class="text-center py-10 opacity-60">
             <i class="fas fa-cloud-sun text-6xl mb-4"></i>
             <p id="placeholderText">Enter a city to display data</p>
         </div>
 
-        <!-- Error -->
         <div id="errorBox" class="hidden mt-4 p-4 bg-red-500/30 border border-red-500/50 rounded-xl text-center text-red-100">
             <i class="fas fa-exclamation-circle mb-2 block text-xl"></i>
             <span id="errorText">City not found. Please try again.</span>
         </div>
     </div>
 
-    <!-- Footer -->
     <p class="mt-8 text-white/60 text-sm">
         Powered by <a href="https://www.weatherapi.com/" target="_blank" class="underline hover:text-white transition">WeatherAPI.com</a>
     </p>
